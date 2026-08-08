@@ -34,3 +34,4 @@ build/
 ### プロジェクト特有 ###
 sample-*/
 .$fig.drawio.bkp
+.$fig.drawio.dtmp
