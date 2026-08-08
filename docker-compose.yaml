@@ -12,6 +12,25 @@ services:
     depends_on:
       - postgres
 
+  batch:
+    build:
+      context: .
+      dockerfile: sample-batch/Dockerfile
+    profiles:
+      - batch
+    environment:
+      BACKEND_BASE_URL: http://app:8080
+      SFTP_HOST: sftp
+      SFTP_PORT: 22
+      SFTP_USERNAME: sample_user
+      SFTP_PASSWORD: sample_password
+      SFTP_REMOTE_DIRECTORY: /upload
+    depends_on:
+      - app
+      - sftp
+    volumes:
+      - ./sample-batch/work/output:/app/work/output
+
   postgres:
     image: postgres:16
     environment:
@@ -22,3 +41,11 @@ services:
       - "5432:5432"
     volumes:
       - ./docker/postgres/init:/docker-entrypoint-initdb.d
+
+  sftp:
+    image: atmoz/sftp:latest
+    ports:
+      - "2222:22"
+    command: sample_user:sample_password:1001
+    volumes:
+      - ./docker/sftp/upload:/home/sample_user/upload
