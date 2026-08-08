@@ -12,4 +12,7 @@ $ docker compose down -v
 ```shell
 # 負荷ツール実行
 $ ./mvnw -pl sample-loadtest gatling:test
+
+# バッチ実行
+$ ./mvnw -pl sample-batch spring-boot:run '-Dspring-boot.run.arguments=ids=24fc789e-fb47-45bd-b741-a6bbd9a8b3cd_2e7f9ccd-9842-4ba8-9a33-988db13f0c22'
 ```

@@ -31,4 +31,6 @@ build/
 ### VS Code ###
 .vscode/
 
+### プロジェクト特有 ###
 sample-*/
+.$fig.drawio.bkp

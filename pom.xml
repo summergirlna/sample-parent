@@ -28,6 +28,7 @@
         <mybatis-spring-boot-starter.version>4.0.1</mybatis-spring-boot-starter.version>
         <gatling.version>3.15.1</gatling.version>
         <gatling.maven.plugin.version>4.21.10</gatling.maven.plugin.version>
+          <openhtml.version>1.0.10</openhtml.version>
     </properties>
 
     <dependencyManagement>
@@ -72,6 +73,12 @@
                 <groupId>io.gatling.highcharts</groupId>
                 <artifactId>gatling-charts-highcharts</artifactId>
                 <version>${gatling.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.openhtmltopdf</groupId>
+                <artifactId>openhtmltopdf-pdfbox</artifactId>
+                <version>${openhtml.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
