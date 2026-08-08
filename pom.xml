@@ -28,7 +28,8 @@
         <mybatis-spring-boot-starter.version>4.0.1</mybatis-spring-boot-starter.version>
         <gatling.version>3.15.1</gatling.version>
         <gatling.maven.plugin.version>4.21.10</gatling.maven.plugin.version>
-          <openhtml.version>1.0.10</openhtml.version>
+        <openhtml.version>1.0.10</openhtml.version>
+        <sshj.version>0.40.0</sshj.version>
     </properties>
 
     <dependencyManagement>
@@ -79,6 +80,12 @@
                 <groupId>com.openhtmltopdf</groupId>
                 <artifactId>openhtmltopdf-pdfbox</artifactId>
                 <version>${openhtml.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.hierynomus</groupId>
+                <artifactId>sshj</artifactId>
+                <version>${sshj.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

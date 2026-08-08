@@ -35,3 +35,4 @@ build/
 sample-*/
 .$fig.drawio.bkp
 .$fig.drawio.dtmp
+docker/sftp/upload/
