@@ -25,6 +25,11 @@ services:
       SFTP_USERNAME: sample_user
       SFTP_PASSWORD: sample_password
       SFTP_REMOTE_DIRECTORY: /upload
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_PORT: 5672
+      RABBITMQ_USERNAME: sample_user
+      RABBITMQ_PASSWORD: sample_password
+      REPORT_QUEUE_NAME: user-name-list-report.request
     depends_on:
       - app
       - sftp
