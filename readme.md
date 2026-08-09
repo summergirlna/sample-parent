@@ -15,5 +15,5 @@ $ ./mvnw -pl sample-loadtest gatling:test
 
 # バッチ実行
 $ docker compose --profile batch build batch
-$ docker compose --profile batch run --rm batch ids=24fc789e-fb47-45bd-b741-a6bbd9a8b3cd_2e7f9ccd-9842-4ba8-9a33-988db13f0c22 run.id=1
+$ docker compose --profile batch run --rm batch ids=0db8dd77-8a54-4eea-91a7-d0808ee22385_0f84f7b6-1853-42c3-8b4d-896b497a0f31 run.id=1
 ```
