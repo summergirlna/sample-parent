@@ -30,6 +30,7 @@
         <gatling.maven.plugin.version>4.21.10</gatling.maven.plugin.version>
         <openhtml.version>1.0.10</openhtml.version>
         <sshj.version>0.40.0</sshj.version>
+        <mina.sshd.version>2.19.0</mina.sshd.version>
     </properties>
 
     <dependencyManagement>
@@ -87,6 +88,19 @@
                 <artifactId>sshj</artifactId>
                 <version>${sshj.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.apache.sshd</groupId>
+                <artifactId>sshd-core</artifactId>
+                <version>${mina.sshd.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.sshd</groupId>
+                <artifactId>sshd-sftp</artifactId>
+                <version>${mina.sshd.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
