@@ -30,6 +30,7 @@ services:
       RABBITMQ_USERNAME: sample_user
       RABBITMQ_PASSWORD: sample_password
       REPORT_QUEUE_NAME: user-name-list-report.request
+      SPRING_PROFILES_ACTIVE: test
     depends_on:
       - app
       - sftp
