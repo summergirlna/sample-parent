@@ -16,6 +16,12 @@ $ ./mvnw -pl sample-loadtest gatling:test
 # バッチ実行
 $ docker compose --profile batch build batch
 $ docker compose --profile batch run --rm batch run.id=1
+
+# フォーマッタ・Linter実行
+$ ./mvnw verify
+
+# フォーマッタ適用
+$ ./mvnw spotless:apply
 ```
 
 ## rabbitmq
