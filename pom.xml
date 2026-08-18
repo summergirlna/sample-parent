@@ -31,6 +31,7 @@
         <openhtml.version>1.0.10</openhtml.version>
         <sshj.version>0.40.0</sshj.version>
         <mina.sshd.version>2.19.0</mina.sshd.version>
+        <spotless.maven.plugin.version>3.9.0</spotless.maven.plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -117,6 +118,19 @@
                                 <artifactId>lombok</artifactId>
                             </path>
                         </annotationProcessorPaths>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>com.diffplug.spotless</groupId>
+                    <artifactId>spotless-maven-plugin</artifactId>
+                    <version>${spotless.maven.plugin.version}</version>
+                    <configuration>
+                        <java>
+                            <googleJavaFormat />
+                            <removeUnusedImports />
+                            <formatAnnotations />
+                        </java>
                     </configuration>
                 </plugin>
 
