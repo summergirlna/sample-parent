@@ -58,6 +58,12 @@
             </dependency>
 
             <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>sample-backend-client</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>io.gatling</groupId>
                 <artifactId>gatling-core-java</artifactId>
                 <version>${gatling.version}</version>
