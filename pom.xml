@@ -19,6 +19,7 @@
     <modules>
         <module>sample-core</module>
         <module>sample-backend</module>
+        <module>sample-backend-client</module>
         <module>sample-batch</module>
         <module>sample-loadtest</module>
     </modules>
