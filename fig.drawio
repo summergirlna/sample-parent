@@ -13,14 +13,14 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="IcxR1-m_iA3JRfLvhTcp-1" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.traditional_server;" value="sample-backend" vertex="1">
-          <mxGeometry height="80" width="46.15" x="360" y="240" as="geometry" />
+          <mxGeometry height="80" width="46.15" x="510" y="240" as="geometry" />
         </mxCell>
         <mxCell id="IcxR1-m_iA3JRfLvhTcp-2" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.traditional_server;" value="PostgreSQL" vertex="1">
-          <mxGeometry height="80" width="46.15" x="600" y="240" as="geometry" />
+          <mxGeometry height="80" width="46.15" x="750" y="240" as="geometry" />
         </mxCell>
         <mxCell id="IcxR1-m_iA3JRfLvhTcp-6" edge="1" parent="1" source="IcxR1-m_iA3JRfLvhTcp-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="IcxR1-m_iA3JRfLvhTcp-1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="300" y="380.0000000000002" as="targetPoint" />
+            <mxPoint x="450" y="380.0000000000002" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="IcxR1-m_iA3JRfLvhTcp-7" connectable="0" parent="IcxR1-m_iA3JRfLvhTcp-6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="HTTPアクセス" vertex="1">
@@ -29,7 +29,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="IcxR1-m_iA3JRfLvhTcp-5" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.gear;" value="sample-loadtest" vertex="1">
-          <mxGeometry height="78" width="78" x="344.08" y="10" as="geometry" />
+          <mxGeometry height="78" width="78" x="494.08" y="10" as="geometry" />
         </mxCell>
         <mxCell id="EyIKNvow1flmhq_dAA7y-2" edge="1" parent="1" source="EyIKNvow1flmhq_dAA7y-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="IcxR1-m_iA3JRfLvhTcp-1">
           <mxGeometry relative="1" as="geometry" />
@@ -56,13 +56,13 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="EyIKNvow1flmhq_dAA7y-1" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.traditional_server;" value="sample-batch" vertex="1">
-          <mxGeometry height="80" width="46.15" x="360" y="440" as="geometry" />
+          <mxGeometry height="80" width="46.15" x="510" y="440" as="geometry" />
         </mxCell>
         <mxCell id="EyIKNvow1flmhq_dAA7y-4" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.traditional_server;" value="SFTPサーバ" vertex="1">
-          <mxGeometry height="80" width="46.15" x="600" y="440" as="geometry" />
+          <mxGeometry height="80" width="46.15" x="750" y="440" as="geometry" />
         </mxCell>
         <mxCell id="4LLxelG7f7XKvn54Lyah-1" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.traditional_server;" value="rabbitmq" vertex="1">
-          <mxGeometry height="80" width="46.15" x="120" y="440" as="geometry" />
+          <mxGeometry height="80" width="46.15" x="270" y="440" as="geometry" />
         </mxCell>
         <mxCell id="wTa06Hi2haVhQpKsGDLq-2" edge="1" parent="1" source="wTa06Hi2haVhQpKsGDLq-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="IcxR1-m_iA3JRfLvhTcp-1">
           <mxGeometry relative="1" as="geometry" />
@@ -73,7 +73,18 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="wTa06Hi2haVhQpKsGDLq-1" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.traditional_server;" value="sample-bff" vertex="1">
-          <mxGeometry height="80" width="46.15" x="120" y="240" as="geometry" />
+          <mxGeometry height="80" width="46.15" x="270" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="PQ328FcLAMNW0HpQ2YU5-2" edge="1" parent="1" source="PQ328FcLAMNW0HpQ2YU5-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="wTa06Hi2haVhQpKsGDLq-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PQ328FcLAMNW0HpQ2YU5-3" connectable="0" parent="PQ328FcLAMNW0HpQ2YU5-2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="HTTPアクセス" vertex="1">
+          <mxGeometry relative="1" x="0.3149" y="-3" as="geometry">
+            <mxPoint x="-21" y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PQ328FcLAMNW0HpQ2YU5-1" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.traditional_server;" value="sample-frontend" vertex="1">
+          <mxGeometry height="80" width="46.15" x="80" y="240" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
