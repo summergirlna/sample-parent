@@ -31,6 +31,9 @@ services:
       - batch
     environment:
       BACKEND_BASE_URL: http://app:8080
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/sample_batch
+      SPRING_DATASOURCE_USERNAME: sample_user
+      SPRING_DATASOURCE_PASSWORD: sample_password
       SFTP_HOST: sftp
       SFTP_PORT: 22
       SFTP_USERNAME: sample_user
@@ -44,6 +47,7 @@ services:
       SPRING_PROFILES_ACTIVE: test
     depends_on:
       - app
+      - postgres
       - sftp
       - rabbitmq
     volumes:

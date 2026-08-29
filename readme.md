@@ -34,8 +34,7 @@ content_type = application/json
 {
   "requestId": "report-001",
   "userIds": [
-    "0db8dd77-8a54-4eea-91a7-d0808ee22385",
-    "0f84f7b6-1853-42c3-8b4d-896b497a0f31"
+    "48fa5817-2d5d-481a-b5a1-24ce52f60a1f"
   ]
 }
 ```

@@ -1,0 +1,1 @@
+CREATE DATABASE sample_batch OWNER sample_user;
