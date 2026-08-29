@@ -1,4 +1,16 @@
 services:
+
+  frontend:
+    build:
+      context: .
+      dockerfile: sample-frontend/Dockerfile
+      args:
+        VITE_GRAPHQL_ENDPOINT: http://localhost:8082/graphql
+    ports:
+      - "3000:80"
+    depends_on:
+      - bff
+
   app:
     build:
       context: .
