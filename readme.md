@@ -13,28 +13,18 @@ $ docker compose down -v
 # 負荷ツール実行
 $ ./mvnw -pl sample-loadtest gatling:test
 
-# バッチ実行
+# バッチビルド
 $ docker compose --profile batch build batch
-$ docker compose --profile batch run --rm batch run.id=1
+
+# バッチ実行(MQ投入)
+$ docker compose --profile batch run --rm batch --spring.batch.job.name=userNameListReportRequestJob run.id=$(date +%Y%m%d%H%M%S) request.id=report-002 user.ids=48fa5817-2d5d-481a-b5a1-24ce52f60a1f
+
+# バッチ実行(MQ刈り取り)
+$ docker compose --profile batch run --rm batch --spring.batch.job.name=userNameListReportJob run.id=$(date +%Y%m%d%H%M%S)
 
 # フォーマッタ・Linter実行
 $ ./mvnw verify
 
 # フォーマッタ適用
 $ ./mvnw spotless:apply
-```
-
-## rabbitmq
-
-バッチ実行前にキューにメッセージを入れておく必要がある。
-
-content_type = application/json
-
-```json
-{
-  "requestId": "report-001",
-  "userIds": [
-    "48fa5817-2d5d-481a-b5a1-24ce52f60a1f"
-  ]
-}
 ```
