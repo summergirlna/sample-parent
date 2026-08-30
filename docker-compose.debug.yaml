@@ -1,4 +1,8 @@
 services:
+  bff:
+    environment:
+      GRAPHIQL_ENABLED: true
+
   postgres:
     ports:
       - "5432:5432"
