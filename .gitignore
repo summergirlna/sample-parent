@@ -37,3 +37,5 @@ sample-*/
 .$fig.drawio.bkp
 .$fig.drawio.dtmp
 docker/sftp/upload/
+
+.nvd_api_key

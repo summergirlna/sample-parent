@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.0.7</version>
+        <version>4.0.8</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
@@ -36,6 +36,8 @@
         <spotless.maven.plugin.version>3.9.0</spotless.maven.plugin.version>
         <maven.pmd.plugin.version>3.23.0</maven.pmd.plugin.version>
         <pmd.version>7.26.0</pmd.version>
+        <dependency-check-maven.version>13.0.0</dependency-check-maven.version>
+        <tomcat.version>11.0.25</tomcat.version>
     </properties>
 
     <dependencyManagement>
@@ -215,5 +217,40 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>security</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.owasp</groupId>
+                        <artifactId>dependency-check-maven</artifactId>
+                        <version>${dependency-check-maven.version}</version>
+                        <configuration>
+                            <nvdApiKey>${env.NVD_API_KEY}</nvdApiKey>
+                            <failBuildOnCVSS>8.0</failBuildOnCVSS>
+                            <formats>
+                                <format>HTML</format>
+                                <format>JSON</format>
+                            </formats>
+                            <suppressionFiles>
+                                <suppressionFile>${maven.multiModuleProjectDirectory}/config/dependency-check/suppressions.xml</suppressionFile>
+                            </suppressionFiles>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>dependency-check</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>aggregate</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
