@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: sample-frontend/Dockerfile
       args:
-        VITE_GRAPHQL_ENDPOINT: ${VITE_GRAPHQL_ENDPOINT}
+        VITE_GRAPHQL_ENDPOINT: ${VITE_GRAPHQL_ENDPOINT:-/graphql}
         VITE_BFF_BASIC_AUTH_USERNAME: ${VITE_BFF_BASIC_AUTH_USERNAME}
         VITE_BFF_BASIC_AUTH_PASSWORD: ${VITE_BFF_BASIC_AUTH_PASSWORD}
     ports:
@@ -30,8 +30,8 @@ services:
     build:
       context: .
       dockerfile: sample-bff/Dockerfile
-    ports:
-      - "8082:8082"
+    expose:
+      - "8082"
     environment:
       BACKEND_BASE_URL: http://app:8080
       BFF_SECURITY_USER_NAME: ${BFF_SECURITY_USER_NAME}

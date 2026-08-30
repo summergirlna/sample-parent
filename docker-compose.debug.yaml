@@ -1,5 +1,7 @@
 services:
   bff:
+    ports:
+      - "8082:8082"
     environment:
       GRAPHIQL_ENABLED: true
       BFF_CORS_ALLOWED_ORIGINS: http://localhost:3000,http://localhost:5173
