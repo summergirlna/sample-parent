@@ -6,8 +6,8 @@ services:
       dockerfile: sample-frontend/Dockerfile
       args:
         VITE_GRAPHQL_ENDPOINT: http://localhost:8082/graphql
-        VITE_BFF_BASIC_AUTH_USERNAME: sample_user
-        VITE_BFF_BASIC_AUTH_PASSWORD: sample_password
+        VITE_BFF_BASIC_AUTH_USERNAME: ${VITE_BFF_BASIC_AUTH_USERNAME}
+        VITE_BFF_BASIC_AUTH_PASSWORD: ${VITE_BFF_BASIC_AUTH_PASSWORD}
     ports:
       - "3000:80"
     depends_on:
@@ -20,9 +20,9 @@ services:
     expose:
       - "8080"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/sample_backend
-      SPRING_DATASOURCE_USERNAME: sample_user
-      SPRING_DATASOURCE_PASSWORD: sample_password
+      SPRING_DATASOURCE_URL: ${SAMPLE_BACKEND_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
     depends_on:
       - postgres
 
@@ -34,8 +34,8 @@ services:
       - "8082:8082"
     environment:
       BACKEND_BASE_URL: http://app:8080
-      BFF_SECURITY_USER_NAME: sample_user
-      BFF_SECURITY_USER_PASSWORD: sample_password
+      BFF_SECURITY_USER_NAME: ${BFF_SECURITY_USER_NAME}
+      BFF_SECURITY_USER_PASSWORD: ${BFF_SECURITY_USER_PASSWORD}
     depends_on:
       - app
 
@@ -47,18 +47,18 @@ services:
       - batch
     environment:
       BACKEND_BASE_URL: http://app:8080
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/sample_batch
-      SPRING_DATASOURCE_USERNAME: sample_user
-      SPRING_DATASOURCE_PASSWORD: sample_password
+      SPRING_DATASOURCE_URL: ${SAMPLE_BATCH_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
       SFTP_HOST: sftp
       SFTP_PORT: 22
-      SFTP_USERNAME: sample_user
-      SFTP_PASSWORD: sample_password
-      SFTP_REMOTE_DIRECTORY: /upload
-      RABBITMQ_HOST: rabbitmq
-      RABBITMQ_PORT: 5672
-      RABBITMQ_USERNAME: sample_user
-      RABBITMQ_PASSWORD: sample_password
+      SFTP_USERNAME: ${SFTP_USERNAME}
+      SFTP_PASSWORD: ${SFTP_PASSWORD}
+      SFTP_REMOTE_DIRECTORY: ${SFTP_REMOTE_DIRECTORY}
+      RABBITMQ_HOST: ${RABBITMQ_HOST}
+      RABBITMQ_PORT: ${RABBITMQ_PORT}
+      RABBITMQ_USERNAME: ${RABBITMQ_USERNAME}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD}
       REPORT_QUEUE_NAME: user-name-list-report.request
       SPRING_PROFILES_ACTIVE: test
     depends_on:
@@ -72,9 +72,9 @@ services:
   postgres:
     image: postgres:16
     environment:
-      POSTGRES_DB: sample_backend
-      POSTGRES_USER: sample_user
-      POSTGRES_PASSWORD: sample_password
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - "5432:5432"
     volumes:
@@ -85,9 +85,9 @@ services:
     image: atmoz/sftp:latest
     ports:
       - "2222:22"
-    command: sample_user:sample_password:1001
+    command: ${SFTP_USERNAME}:${SFTP_PASSWORD}:1001
     volumes:
-      - ./docker/sftp/upload:/home/sample_user/upload
+      - ./docker/sftp/upload:/home/${SFTP_USERNAME}/upload
 
   rabbitmq:
     image: rabbitmq:3-management
@@ -95,8 +95,8 @@ services:
       - "5672:5672"
       - "15672:15672"
     environment:
-      RABBITMQ_DEFAULT_USER: sample_user
-      RABBITMQ_DEFAULT_PASS: sample_password
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
     volumes:
       - rabbitmq-data:/var/lib/rabbitmq
 
