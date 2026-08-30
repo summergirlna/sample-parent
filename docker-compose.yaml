@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: sample-frontend/Dockerfile
       args:
-        VITE_GRAPHQL_ENDPOINT: http://localhost:8082/graphql
+        VITE_GRAPHQL_ENDPOINT: ${VITE_GRAPHQL_ENDPOINT}
         VITE_BFF_BASIC_AUTH_USERNAME: ${VITE_BFF_BASIC_AUTH_USERNAME}
         VITE_BFF_BASIC_AUTH_PASSWORD: ${VITE_BFF_BASIC_AUTH_PASSWORD}
     ports:
@@ -75,25 +75,25 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-    ports:
-      - "5432:5432"
+    expose:
+      - "5432"
     volumes:
       - postgres-data:/var/lib/postgresql/data
       - ./docker/postgres/init:/docker-entrypoint-initdb.d
 
   sftp:
     image: atmoz/sftp:latest
-    ports:
-      - "2222:22"
+    expose:
+      - "22"
     command: ${SFTP_USERNAME}:${SFTP_PASSWORD}:1001
     volumes:
       - ./docker/sftp/upload:/home/${SFTP_USERNAME}/upload
 
   rabbitmq:
     image: rabbitmq:3-management
-    ports:
-      - "5672:5672"
-      - "15672:15672"
+    expose:
+      - "5672"
+      - "15672"
     environment:
       RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
       RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}

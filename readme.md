@@ -1,7 +1,11 @@
 ## docker
 
 ```shell
+# 通常起動(インフラサービスを外部公開しない)
 $ docker compose up --build
+
+# デバッグ起動(インフラサービスを外部公開する)
+$ docker compose -f docker-compose.yaml -f docker-compose.debug.yaml up --build
 
 # ボリューム作り直し
 $ docker compose down -v
