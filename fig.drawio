@@ -78,7 +78,7 @@
         <mxCell id="PQ328FcLAMNW0HpQ2YU5-2" edge="1" parent="1" source="PQ328FcLAMNW0HpQ2YU5-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="wTa06Hi2haVhQpKsGDLq-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="PQ328FcLAMNW0HpQ2YU5-3" connectable="0" parent="PQ328FcLAMNW0HpQ2YU5-2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="HTTPアクセス" vertex="1">
+        <mxCell id="PQ328FcLAMNW0HpQ2YU5-3" connectable="0" parent="PQ328FcLAMNW0HpQ2YU5-2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="HTTPアクセス&lt;div&gt;(Basic認証)&lt;/div&gt;" vertex="1">
           <mxGeometry relative="1" x="0.3149" y="-3" as="geometry">
             <mxPoint x="-21" y="-3" as="offset" />
           </mxGeometry>
