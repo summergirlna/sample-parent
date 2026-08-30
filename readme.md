@@ -42,4 +42,7 @@ $ npm run check
 
 # フォーマッタ適用
 $ npm run format
+
+# 依存関係チェック
+$ npm run audit
 ```
